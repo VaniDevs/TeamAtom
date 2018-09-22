@@ -1,9 +1,68 @@
 extends layout
 block append style
-  link(rel='stylesheet', href='stylesheets/index.css')
+  link(rel='stylesheet', href='stylesheets/list.css')
 block append scripts
   script(src='https://cdn.auth0.com/js/lock/11.4.0/lock.min.js')
   script(src='javascripts/index.js')
   
 block content
-  div#lock
+  div#lock.container.text-center
+    .row
+      .col-xs-12
+        form
+          h2 Contact Us
+          .row
+            .col-md-6
+              .form-group
+                label(for='type') Type
+                select(name='type').form-control
+                  option(value='all') All
+                  option(value='sport') Sport
+                  option(value='finance') Finance
+                  option(value='food') Food
+                  option(value='clothes') Clothes
+                  option(value='childcare') Childcare
+            // col-md-6
+            .col-md-6
+              .form-group
+                label(for='distance') Distance
+                input#last.form-control(type='range',min=1,max=100,value=50)
+            // col-md-6
+          .row
+            .col-md-6
+              .form-group
+                label(for='company') Company
+                input#company.form-control(placeholder='', type='text')
+            // col-md-6
+            .col-md-6
+              .form-group
+                label(for='phone') Phone Number
+                input#phone.form-control(placeholder='phone', type='tel')
+            .col-md-12
+              label(for='contact-preference') When is the best time of day to reach you?
+              .radio
+                label
+                  input#contact-preference(name='contact-preference', value='am', checked='', type='radio')
+                  | Morning
+              .radio
+                label
+                  input#contact-preference(name='contact-preference', value='pm', checked='', type='radio')
+                  | Evening
+              label(for='newsletter') Would you like to recieve our email newsletter?
+              .checkbox
+                label
+                  input#newsletter(value='Sure!', type='checkbox')
+                  |  Sure!
+              button.btn.btn-primary(type='submit') Submit
+
+
+    .row
+      .col-sm-6
+        | Food Cards
+      .col-sm-6
+        | Finance Cards
+    .row
+      .col-sm-6
+        | Sports Cards
+      .col-sm-6
+        | Childcare cards
