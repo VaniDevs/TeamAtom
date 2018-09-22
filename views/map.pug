@@ -2,7 +2,11 @@ extends layout
 block append style
   link(rel='stylesheet', href='stylesheets/map.css')
 block append scripts
-  script(src='javascripts/layout.js')
+  script(src='https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js')
   
 block content
-  
+  div
+    div#map
+      
+      
+  script(src='javascripts/map.js')
