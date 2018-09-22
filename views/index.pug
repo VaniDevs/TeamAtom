@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .split-pane.col-xs-12.col-sm-6.uiux-side
+    div
+      img(src='https://bit.ly/BCR-design')
+      .text-content
+        .bold Resources by
+        .big LIST
+      a.button(href='/list')
+        | FILTER RESOURCES
+  .split-pane.col-xs-12.col-sm-6.frontend-side
+    div
+      img(src='https://bit.ly/bcr-dev')
+      .text-content
+        .bold Resources by
+        .big MAP
+      a.button(href='/map')
+        | FIND RESOURCES
+  #split-pane-or
+    div
+      img(id='baglogo',src='/images/grabbag.png')
